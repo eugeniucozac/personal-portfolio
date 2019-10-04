@@ -18,7 +18,7 @@
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
-    "ejs": "^1.0.0",
+    "ejs": "^2.5.5",
     "express": "^4.6.1",
     "express-ejs-layouts": "^1.1.0",
     "express-session": "^1.16.2",
