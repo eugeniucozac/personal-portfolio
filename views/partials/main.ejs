@@ -1,0 +1,178 @@
+<section id="about">
+	<div class="container">  
+		<div class="row desktop-p">
+			<% abouts.map(item =>{ %>
+				<div class="col-md-4 d-md-block d-none">
+					<img src="<%= item.image %>" class="card-img avatar" alt="image3">
+				</div>
+				<div class="col-sm-12 col-md-8">
+					<section class="jumbotron">
+						<h2>About me</h2>
+						<%- item.content %>
+						<p><img class="mt-3 signature" src="/images/signature.svg" alt="signature"></p>
+						<a class="btn btn-primary btn-lg" href="<%= cv_url %>" role="button">Download CV</a>
+						<a class="btn btn-primary btn-lg works-button" data-click="projects" role="button">my works</a>
+					</section>
+				</div>
+			<% }) %> 
+			<% logoexperiences.map(logoexperience => { %>
+				<div class="col-6 col-sm-6 col-md-3">
+					<img src="<%= logoexperience.image %>" class="card-img" alt="<%= logoexperience.image %>">
+				</div>
+			<% }) %> 
+		</div>
+	</div>
+</section>
+<section id="experience" class="mb-md-5 text-center">
+	<div class="container">
+		<div class="watermark">my resume</div>
+		<%-: subtitles | equalSubtitle:"experience" %>
+		<div class="row desktop-p">
+			<div class="col-sm-12 col-md-6"><h3 class="d-none d-md-block">Experience</h3></div>
+			<div class="col-sm-12 col-md-6"><h3 class="d-none d-md-block">Experience</h3></div>
+			<% experience = experiences.filter(exp => exp.category == "experience").sort((a,b) =>{b.startDate-a.startDate}).map(exp =>{ %>
+				<section class="experience-wrap col-sm-12 col-md-6">
+					<section class="experience-widget">
+						<div class="circle"></div>
+						<span><%= moment(exp.startDate).format('YYYY') %> - <%= moment(exp.endDate).format('YYYY') %></span>
+						<h4><%= exp.title %></h4>
+						<p class="mb-2"><%= exp.company %></p>
+						<p><%= exp.details %></p>
+					</section>
+				</section>
+			<% }) %>
+		</div>
+		<div class="row mt-md-5 desktop-p">
+			<div class="col-sm-12 col-md-6"><h3 class="d-none d-md-block">Education</h3></div>
+			<div class="col-sm-12 col-md-6"><h3 class="d-none d-md-block">Education</h3></div>
+			<% education = experiences.filter(exp => exp.category == "education").map(exp =>{  %>
+				<section class="experience-wrap col-sm-12 col-md-6">
+					<section class="experience-widget">
+						<div class="circle"></div>
+						<span><%= moment(exp.startDate).format('YYYY') %> - <%= moment(exp.endDate).format('YYYY') %></span>
+						<h4><%= exp.title %></h4>
+						<p class="mb-2"><%= exp.company %></p>
+						<p><%= exp.details %></p>
+					</section>
+				</section>
+			<% }) %>
+		</div>
+	</div>
+</section>
+<section id="skills" class="text-center">
+	<div class="container">
+		<div class="watermark">my skills</div>
+		<%-: subtitles | equalSubtitle:"skills" %>
+		<div class="row text-left desktop-p">
+			<% skills.map(skill => { %>
+				<div class="progress-block col-sm-12 col-md-6">
+					<h6><%= skill.type %></h6>
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" style="width: <%= skill.progress %>%" aria-valuenow="<%= skill.progress %>" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+				</div>
+			<% }) %> 
+		</div>
+	</div>	
+</section>
+<section id="projects" class="text-center">
+	<div class="container">
+		<div class="watermark">projects</div>
+		<%-: subtitles | equalSubtitle:"projects" %>
+		<div id="u-slider" class="row desktop-p">
+			<div class="col-md-2 d-none first">
+				<% if (projects[projects.length - 1]) { %>
+					<img src="<%= projects[projects.length - 1].image %>" class="card-img" alt="">
+				<% } %>
+			</div>
+			<% projects.map(project => { %>
+				<div class="col-md-2 d-none static">
+					<img src="<%= project.image %>" class="card-img" alt="<%= project.title %>">
+					<section class="capture my-md-5 my-sm-3">
+						<a class="view" href="<%= project.viewproject %>">View Live Project</a>&nbsp;<a>&#124;</a>&nbsp;<a class="view" href="<%= project.viewgithub %>">View on Github</a>
+						<h4 class="mt-2"><%= project.title %></h4>
+						<a><%= project.technologies %></a>
+					</section> 
+				</div>
+			<% }) %> 
+				<div class="col-md-2 d-none last">
+					<% if (projects[0]) { %>
+						<img src="<%= projects[0].image %>" class="card-img" alt="">
+					<% } %>
+				</div>
+				<ul class="nav choseproject">
+					<% projects.map((project, i) => { %>
+						<li class="nav-item"><a class="<%  ( i == 0 ) ? "active" : ""  %>">0<%= i + 1 %></a></li>
+					<% }) %> 
+				</ul>
+		</div>
+	</div>	
+</section>
+<section id="design" class="text-center mb-lg-5 d-none d-md-block">
+	<div class="container">
+		<div class="watermark">experience</div>
+		<%-: subtitles | equalSubtitle:"design" %>
+		<div class="row desktop-p">
+			<% pastexperiences.map(pastexperience => { %>
+				<div class="col-sm-12 col-md-4">	
+					<div class="card pt-md-5 pt-sm-3">
+						<div class="card-header rounded-circle text-center">
+							<i class="far <%= pastexperience.icon %>"></i>
+						</div>	
+						<div class="card-body">
+							<h5 class="card-title"><%= pastexperience.skill %></h5>
+							<p class="card-text mb-2"><%- pastexperience.details %></p>
+						</div>
+					</div>
+				</div>
+	    	<% }) %> 
+		</div>
+	</div>
+</section>
+<section id="contact" class="text-center">
+	<div class="container">
+		<div class="watermark">contact</div>
+		<%-: subtitles | equalSubtitle:"contact" %>
+		<div class="row text-left desktop-p">
+			<img src="/images/clouds.svg" class="card-img clouds col-md-8" alt="">
+			<div class="col-sm-12 col-md-6">	
+				<h5>Get in touch</h5>
+				<% contacts.map(contact => { %>
+					<div class="card">
+						<div class="row no-gutters">
+							<div class="col-md-2 col-sm-2">
+								<div class="icon-fa">
+									<i class="<%= contact.icon %>"></i>
+								</div>	
+							</div>
+							<div class="col-md-10 col-sm-10 col-xs-10">
+								<div class="card-body">
+									<h6 class="card-title"><%= contact.type %></h6> 
+									<p><%- contact.details %></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				<% }) %> 	
+			</div>
+			<div class="col-sm-12 col-md-6">	
+				<h5>Drop Me a Line</h5>
+				<form class="mt-md-4" action="/contacts/email" method="post">
+					<input type="hidden" name="_method" value="POST">
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<input type="text" name="dropLineName" class="form-control" placeholder="Name *" required>
+						</div>
+						<div class="form-group col-md-6">
+							<input type="email" name="dropLineEmail" class="form-control" placeholder="Email *" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="text" name="dropLineMessage" class="form-control" placeholder="Your Message">
+					</div>
+					<button type="submit" class="btn btn-primary">Sent Now</button>
+				</form>
+			</div>
+		</div>	
+	</div>	
+</section>

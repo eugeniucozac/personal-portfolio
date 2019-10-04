@@ -1,0 +1,171 @@
+header{
+  font-family: $gothamBook;
+  background: $black;
+  border-bottom-right-radius: 8rem;
+  .card-img{
+    margin-top: 1rem;
+    @include media-breakpoint-down(lg) {
+      margin-top: 3rem;
+    }
+  }
+  .container{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include media-breakpoint-down(lg) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+    @include media-breakpoint-down(md) {
+      padding-left: 2.7rem;
+      padding-right: 2.7rem;
+    }
+    @include media-breakpoint-down(sm) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .social-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5rem;
+    background-color: $grayblack;
+    @include media-breakpoint-down(sm) {
+      position: static;
+      width: 100%;
+      height: auto;
+    }
+    h1{
+      padding: 1rem;
+      @include media-breakpoint-down(sm) {
+        float: left;
+      }
+      img{
+        display: block;
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+    }
+    ul{
+       position: absolute;
+       bottom: 4rem;
+       padding-left: 1.5rem;
+       @include media-breakpoint-down(sm) {
+         position: static;
+         float: left;
+         width: 70%;
+         margin: 1.2rem 0 0 0;
+       }
+       li{
+        list-style-type: none;
+        margin-bottom: .7rem;
+        @include media-breakpoint-down(sm) {
+          float: left;
+          margin-right: 7%;
+          &:last-of-type{
+            margin-right: 0;
+          }
+        }
+        a{
+         border: 1px solid $lightergray;
+         border-radius: 50%;
+         width: 1.8rem;
+         height:  1.8rem;
+         text-align: center;
+         display: block;
+         transition: all .5s ease;
+         cursor: pointer;
+         @include media-breakpoint-down(sm) {
+           width: 2.8rem;
+           height: 2.8rem;
+          }
+         svg{
+          color: $lightgray;
+          font-size: .7rem;
+          @include media-breakpoint-down(sm) {
+            font-size: 1.3rem;
+            height: 1.9em;
+          }
+        }
+        &:hover{
+          border-color:$yellow;
+          svg{
+            color:$yellow;
+          }
+        }
+      }
+    }
+  }
+} 
+.nav{
+  margin: 1.5rem 0;
+  li{
+    &:first-of-type{
+      a{
+         padding-left: 0!important;
+       }
+    }
+   a, a:not([href]):not([tabindex]){
+     cursor: pointer;
+     color:$white;
+     padding: .5rem 0;
+     position: relative;
+     transition: all .5s ease;  
+     &.active, &:hover{
+        color:$yellow;
+      }
+    }
+  }
+}
+.jumbotron{
+  background: transparent;
+  color:$white;
+  padding-left: 0;
+  margin-top: 3rem;
+  @include media-breakpoint-down(lg) {
+    padding: 2rem 0;
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+      margin-top: 0;
+    }
+  }
+  h3{ 
+     font-family: $gothamBold;
+     margin-bottom: 1.25rem;
+     font-size: 3.4rem;
+     color: $white;
+     @include media-breakpoint-down(md) {
+      font-size: 2.4rem;  
+      font-weight: normal;
+      margin-top: 1rem;
+     }
+     span{  
+      display: inline-block;
+      color:$yellow;
+    } 
+  }
+  h4{
+    margin: 2rem 0; 
+    @include media-breakpoint-down(md) {
+      margin: 1rem 0; 
+    }
+    font-family: $gothamMedium;
+  }
+  &>div:first-of-type{
+    margin-top: 2rem;
+    @include media-breakpoint-down(sm) {
+      margin-top: 0;
+    }
+  }
+  p{
+    font-size: .8rem;
+  }
+  .btn-primary{
+    @include button("none");
+    @include media-breakpoint-down(lg) {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

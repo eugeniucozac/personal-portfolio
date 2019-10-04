@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url('Gotham-Book.svg#Gotham-Book') format('svg'),
+       url('Gotham-Book.ttf') format('truetype'),
+       url('Gotham-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamBook';
+  src: url('GothamBook.eot');
+  src: url('GothamBook.eot?#iefix') format('embedded-opentype'),
+       url('GothamBook.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

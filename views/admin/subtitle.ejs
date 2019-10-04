@@ -1,0 +1,42 @@
+<section class="tab-pane" id="subtitles-tab" role="tabpanel">
+  <h5>Subtitles</h5>
+    <% subtitles.forEach((subtitle) => { %>
+      <div class="card card-body mb-3">
+          <form action="/subtitles/<%= subtitle.id %>?_method=PUT" method="post">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+              <label for="blockSubtitle">Block</label>
+              <input type="text" class="form-control" name="blockSubtitle" value="<%= subtitle.block %>">
+            </div>
+            <div class="form-group">
+              <label for="blockTitle">Block Title</label>
+              <input type="text" class="form-control" name="blockTitle" value="<%= subtitle.title %>">
+            </div>
+            <div class="form-group">
+              <label for="subtitle">Subtitle</label>
+              <textarea class="form-control" name="subtitle"><%= subtitle.subtitle %></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="/subtitles/<%= subtitle.id %>?_method=DELETE" class="btn btn-primary">Delete</a> 
+          </form>
+      </div>
+    <% }) %> 
+      <div class="card card-body mb-3">
+          <form action="/subtitles" method="post">
+            <input type="hidden" name="_method" value="POST">
+            <div class="form-group">
+              <label for="blockSubtitle">Block</label>
+              <input type="text" class="form-control" name="blockSubtitle" value="" required>
+            </div>
+            <div class="form-group">
+              <label for="blockTitle">Block Title</label>
+              <input type="text" class="form-control" name="blockTitle" value="" required>
+            </div>
+            <div class="form-group">
+              <label for="subtitle">Subtitle</label>
+              <textarea class="form-control" name="subtitle" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Subtitle</button>
+          </form>
+      </div>
+</section>

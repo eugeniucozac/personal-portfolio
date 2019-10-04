@@ -1,0 +1,35 @@
+<section class="tab-pane" id="about-tab" role="tabpanel">
+    <h5>about</h5>
+    <% abouts.forEach((item) => { %>
+        <div class="card card-body mb-3">
+          <form action="/abouts/<%= item.id %>?_method=PUT"  method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+              <label for="contentAbout">Content</label>
+              <textarea class="form-control" name="contentAbout" rows="6"><%= item.content %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="imageabout">Upload Image</label>
+                <input type="file" name="imageabout" class="form-control">
+            </div>
+             <button type="submit" class="btn btn-primary">Update</button>
+             <a href="/abouts/<%= item.id %>?_method=DELETE" class="btn btn-primary">Delete</a> 
+          </form>
+        </div>
+     <% }) %> 
+      <div class="card card-body mb-3">
+          <form action="/abouts" method="POST" enctype="multipart/form-data">  
+            <input type="hidden" name="_method" value="POST">
+            <div class="form-group">
+              <label for="contentabout">Content</label>
+              <textarea class="form-control" name="contentabout" rows="6" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="imageabout">Upload Image</label>
+                <input type="file" name="imageabout" class="form-control" required>
+            </div> 
+             <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+      </div>
+</section>
+

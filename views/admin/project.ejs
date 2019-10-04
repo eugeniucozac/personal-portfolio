@@ -1,0 +1,58 @@
+<section class="tab-pane" id="projects-tab" role="tabpanel">
+  <h5>Projects</h5>
+      <% projects.forEach((project) => { %>
+        <div class="card card-body mb-3">
+          <form action="/projects/<%= project.id %>?_method=PUT" method="post">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+              <label for="titleproject">Title</label>
+              <input type="text" class="form-control" name="titleproject" value="<%= project.title %>">
+            </div>
+            <div class="form-group">
+              <label for="viewproject">View Project</label>
+              <input type="text" class="form-control" name="viewproject" value="<%= project.viewproject %>">
+            </div>
+            <div class="form-group">
+              <label for="viewgithub">View Github</label>
+              <input type="text" class="form-control" name="viewgithub" value="<%= project.viewgithub %>">
+            </div>
+            <div class="form-group">
+              <label for="technologies">Technologies</label>
+              <input type="text" class="form-control" name="technologies" value="<%= project.technologies %>">
+            </div>
+            <div class="form-group">
+                <label for="imageproject">Upload image</label>
+                <input type="file" name="imageproject" class="form-control" value="<%= project.image %>">
+            </div> 
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="/projects/<%= project.id %>?_method=DELETE" class="btn btn-primary">Delete</a> 
+          </form>
+        </div> 
+      <% }) %> 
+        <div class="card card-body mb-3">
+          <form action="/projects" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="POST">
+            <div class="form-group">
+              <label for="titleproject">Title</label>
+              <input type="text" class="form-control" name="titleproject" value="" required>
+            </div>
+            <div class="form-group">
+              <label for="viewproject">View Project</label>
+              <input type="text" class="form-control" name="viewproject" value="" required>
+            </div>
+            <div class="form-group">
+              <label for="viewgithub">View Github</label>
+              <input type="text" class="form-control" name="viewgithub" value="" required>
+            </div>
+            <div class="form-group">
+              <label for="technologies">Technologies</label>
+              <input type="text" class="form-control" name="technologies" value="" required>
+            </div>
+            <div class="form-group">
+                <label for="imageproject">Upload image</label>
+                <input type="file" name="imageproject" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+        </div>
+</section>

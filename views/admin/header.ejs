@@ -1,0 +1,50 @@
+<section class="tab-pane active" id="header-tab" role="tabpanel">
+    <h5>header</h5>
+    <% headers.forEach((item) => { %>
+        <div class="card card-body mb-3">
+          <form action="/headers/<%= item.id %>?_method=PUT"  method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+              <label for="devname">Name</label>
+              <input type="text" class="form-control" name="devname" value="<%= item.name %>" required>
+            </div>
+            <div class="form-group">
+              <label for="devexperience">Experience</label>
+              <textarea class="form-control" name="devexperience" required><%= item.experience %></textarea>
+            </div>
+            <div class="form-group">
+              <label for="devposition">Position</label>
+              <input type="text" class="form-control" name="devposition" value="<%= item.position %>" required>
+            </div>
+           <div class="form-group">
+                <label for="devphoto">Upload image</label>
+                <input type="file" name="devphoto" class="form-control mediaFile" value="<%= item.image %>">
+            </div>  
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="/headers/<%= item.id %>?_method=DELETE" class="btn btn-primary">Delete</a> 
+          </form>
+        </div>
+    <% }) %> 
+        <div class="card card-body mb-3">
+          <form action="/headers" method="POST" enctype="multipart/form-data">  
+            <input type="hidden" name="_method"  value="POST" >
+            <div class="form-group">
+              <label for="devname">Name</label>
+              <input type="text" class="form-control" name="devname" required>
+            </div>
+            <div class="form-group">
+              <label for="devexperience">Experience</label>
+              <textarea class="form-control" name="devexperience" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="devposition">Position</label>
+              <input type="text" class="form-control" name="devposition" required>
+            </div>
+            <div class="form-group">
+                <label for="devphoto">Upload image</label>
+                <input type="file" name="devphoto" class="form-control" required>
+            </div>  
+             <button type="submit" class="btn btn-primary">Add</button>
+          </form>
+        </div>
+</section>

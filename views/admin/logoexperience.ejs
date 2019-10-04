@@ -1,0 +1,34 @@
+<section class="tab-pane" id="logo-tab" role="tabpanel">
+  <h5>Logo</h5>
+  <% logoexperiences.forEach((logo) => { %>
+    <div class="card card-body mb-3">
+      <form action="/logoexperiences/<%= logo.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+            <label for="typeLogo">Title</label>
+            <input type="text" class="form-control" name="typeLogo" value="<%= logo.type %>">
+        </div>
+        <div class="form-group">
+            <label for="logoimage">Image</label>
+            <input type="file" class="form-control" name="logoimage" value="<%= logo.image %>">
+        </div> 
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="/logoexperiences/<%= logo.id %>?_method=DELETE" class="btn btn-primary">Delete</a> 
+      </form>
+    </div>
+  <% }) %> 
+      <div class="card card-body mb-3">
+        <form method="post" enctype="multipart/form-data" action="/logoexperiences">
+            <input type="hidden" name="_method" value="POST">
+            <div class="form-group">
+              <label for="typeLogo">Title</label>
+              <input type="text" class="form-control" name="typeLogo" value="" required>
+            </div>
+            <div class="form-group">
+              <label for="logoimage">Image</label>
+              <input type="file" class="form-control" name="logoimage" value="" required>
+            </div> 
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+</section>

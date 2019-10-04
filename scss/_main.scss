@@ -1,0 +1,447 @@
+body{ 
+   -webkit-text-size-adjust: none;
+   text-size-adjust: none;
+  .btn{
+    @include media-breakpoint-down(md) {
+    }
+  }
+  section{
+    .container{
+      &>p.mb-5{  
+        padding: 0 29%;
+         @include media-breakpoint-down(md) {
+            padding: 0 3%;  
+         }
+      }
+    }
+  }
+  background-color: $grayblack;
+  font-size: 16px;
+  .desktop-p{
+    position: relative;
+    padding-left: 5%;
+    padding-right: 5%;
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .card-body{
+      padding-right: .5rem;
+      padding-left: .5rem;
+    }
+  }
+  p{
+  	font-family: $gothamBook;
+  	font-size: .75rem;
+  	line-height: 1.5rem;
+  	color: $white;
+  }
+  h2{
+  	font-family: $gothamBold;
+  	color:$yellow;
+  	position: relative;
+  	margin-bottom: 1.5rem;
+  	&::after{
+  		content: "____";
+  		margin-bottom: .2rem;
+  		position: absolute;
+  		bottom: .2rem;
+  		font-size: .9rem;
+  	  margin-left: .8rem;
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+  	}
+  }
+}
+.alert-danger{
+    border-radius: 0;
+    color: $white;
+    background: $red;
+}
+#about{
+  padding-top: 5rem;
+  min-height: 15rem;
+  @include media-breakpoint-down(lg) {
+    padding-top: 2rem;
+    min-height: auto;
+  }
+  @include media-breakpoint-down(sm) {
+    .card-img{
+      margin-bottom: 2rem;
+    }
+  }
+  .avatar{
+    width: 110%;     
+  }
+  .jumbotron{
+    background: transparent;
+    color:$white;
+    padding-top: 2rem;
+    @include media-breakpoint-down(md) {
+      padding: 0;
+    }
+    .signature{
+      width: 15rem;
+      height: auto;
+      display: block;
+      @include media-breakpoint-down(md) {
+        width: 75%;
+        margin-top: -.5rem!important;
+      }
+    }
+    .btn-primary{
+      @include button("none");
+      margin-top: .5rem;
+      &:last-of-type{
+        @include button('black');
+        margin-top: .5rem;
+        @include media-breakpoint-down(md) {
+          margin-left: 0;
+        }
+      } 
+    }
+  }
+}
+#experience{
+  @include watermark();
+  padding-top: 2rem;
+  position: relative;
+  min-height: 15rem;
+  @include media-breakpoint-down(md) {
+    min-height: auto;
+  }
+  h3{
+    font-family: $gothamBold;
+    font-size: 2.4rem;
+    margin-left: 2.9rem;
+    text-align: left;
+  }
+  .experience-wrap{
+    position: relative;
+    border-left: 1px solid $gray;
+    padding-bottom: 2.3rem;
+    text-align: left;
+    @include media-breakpoint-down(md) {
+      padding-bottom: 0;
+    }
+    &:last-of-type, &:nth-last-child(2){
+      padding-bottom: 0;
+    }
+    .experience-widget{
+      margin-left: 2rem;
+      @include media-breakpoint-down(md) {
+        margin-left: 1rem;
+      }
+      @include media-breakpoint-down(sm) {
+        margin-left: 0;
+      }
+      padding: 1rem;
+      cursor: pointer;
+      transition: box-shadow .4s;
+      .circle{
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: $gray;
+        position: absolute;
+        left: -.5rem;
+        top: -1rem;
+        transition: all .5s ease;
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+      }
+      span{
+        color: $white;
+        background: $gray;
+        border-radius: 1.2rem;
+        font-size: .8rem;
+        padding: .5rem 2rem;
+      }
+      h4{
+        margin-top: 1.4rem;
+        color: $white;
+        font-family: $gothamBold;
+        font-size: 1.3rem;
+        transition: all .5s ease;
+      }
+      &:hover{
+        background: $lighterblack;
+        @include box-shadow(0, 0, 10px, rgba(0,0,0,0.6));
+        h4{
+          color: $yellow;
+        }
+        .circle{
+          background: $yellow;
+        }
+      }
+    }
+  }
+}
+#design{
+  background: $lightblack;
+  padding: 3rem 0;
+  min-height: 10rem;
+  @include media-breakpoint-down(md) {
+    padding: 2rem 0;
+    min-height: auto;
+  }
+  @include watermark();
+  position: relative;
+  .card{
+    background: transparent;
+    color: $white;
+    transition: box-shadow .4s;
+    &:hover{
+      cursor: pointer;
+      background: $lighterblack;
+      @include box-shadow(0, 0, 10px, rgba(0,0,0,0.6));
+      svg, h5{
+        color: $yellow;
+      }
+    }
+    .card-header{
+      width: 3.75rem;
+      height: 3.75rem;
+      background: $gray;
+      margin:0 auto;
+      svg{
+        font-size: 2.1rem;
+        margin-left: -3rem;
+        margin-top: .5rem;
+        font-weight: 300;
+        transition: all .5s ease;
+      }
+    }
+    h5{
+      transition: all .5s ease;
+      @include media-breakpoint-down(md) {
+        font-size: 1.05rem;
+      }
+    }
+  }
+}
+#projects{
+  @include watermark();
+  position: relative;
+  padding-top: 1.5rem;
+  min-height: 10rem;
+  @include media-breakpoint-down(md) {
+     min-height: auto;
+  }
+  #u-slider{
+    .col-md-8{ 
+        img{
+          opacity: 1;
+          animation-name: fadeInOpacity;
+          animation-iteration-count: 1;
+          animation-timing-function: ease-in;
+          animation-duration: .7s;
+      }
+    }
+    @keyframes fadeInOpacity {
+      0% { opacity: 0}
+      100% { opacity: 1}
+    }
+  }
+  .row{
+    position: relative;
+    ul{
+      position: absolute;
+      top:-.4rem;
+      left: 6%;
+      z-index: 50;
+      @include media-breakpoint-down(lg) {
+        left: 0;
+        @include media-breakpoint-down(md) {
+          position: static;
+          margin: .5rem auto;
+        }
+      }
+      a{
+        color: $white; 
+        padding: .1rem .2rem;
+        font-family: $gothamMedium;
+        font-size: .6rem;
+        cursor: pointer;
+        transition: all .5s ease;
+        &:hover, &.active{
+          color:$yellow;
+          text-decoration: underline;
+        }
+        @include media-breakpoint-down(md) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .col-md-2{
+    position: relative;
+    img{
+      position: absolute;
+      top: 7.5rem;
+      margin: auto;
+      left: 0
+    }
+  }
+  .capture{
+    color: $yellow;
+    display: none;
+    h4{
+     color: #fff;
+     font-family: $gothamBold;
+     font-size: 1.3rem;
+   }
+   a{
+      color:$yellow;
+      font-size: .7rem;
+      font-family: $gothamBook;
+      &.view{
+        padding-bottom: .2rem;
+        border-bottom: 1px solid $yellow;
+      }
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+  .col-md-8{
+    .capture{
+      display: block;
+      @include media-breakpoint-down(md) {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+#skills{
+  @include watermark();
+  position: relative;
+  margin-bottom: 1rem;
+  padding: 3rem 0;
+  background: $lightblack;
+  color:$white;
+  min-height: 5rem;
+  @include media-breakpoint-down(md) {
+     min-height: auto;
+    padding: 2rem 0 0 0;
+  }
+  .progress-block{
+    margin-bottom: 1.5rem;
+    &:last-of-type{
+      margin-bottom: 0;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 1.5rem;
+      }
+    }
+    .progress{
+      border-radius: 0;
+      height: .4rem;
+      margin-top: 1rem;
+      .progress-bar{
+        background: $yellow;
+      }
+    }
+  }
+}
+#contact{
+  @include watermark();   
+  position: relative;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+  min-height: 30rem;
+  h5, h6{
+    color: $white;
+    transition: all .5s ease;
+  }
+  @include media-breakpoint-down(md) {
+    min-height: auto;  
+    .col-sm-12{
+      &>h5{
+        text-align: center;
+      }
+    }
+  }
+  img.clouds{
+    position: absolute;
+    top: -3rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: .2;
+    @include media-breakpoint-down(md) {
+      top: 16rem;
+    }
+  } 
+  .card{  
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 1rem;
+    &:first-of-type{
+      margin-top: 1.5rem;
+    }
+    &:last-of-type{
+      margin-bottom: 3rem;
+    }
+    p{
+      margin-bottom: 0;
+    }
+    @include media-breakpoint-down(sm) {
+      .col-sm-2 {
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+      }
+      .col-sm-10 {
+        -ms-flex: 0 0 83.333333%;
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
+      }
+    }
+    .col-md-2{
+      position: relative;
+      .icon-fa{
+        border:1px solid $lightergray;
+        border-radius: 50%;
+        width: 3.2rem;
+        height: 3.2rem;
+        position: absolute;
+        bottom: 1.3rem;
+        margin: auto;
+        text-align: center;
+        padding-top: .8rem;
+        transition: all .5s ease;
+        svg{
+          color: $lightergray;
+          font-size: 1.2rem;
+          transition: all .5s ease;
+        }
+      }
+    }
+    .card-body{
+      padding-bottom: 0;
+      padding-left: 0;
+      @include media-breakpoint-down(md) {
+        padding-left: 1.5rem;
+      }
+    }
+    &:hover{
+      h6, .svg-inline--fa{
+        color: $yellow!important;
+      }
+      .icon-fa{
+        border-color: $yellow; 
+      }
+    }
+  }
+  form{
+    input{
+      @include input-form();
+    }
+    button{
+      @include button("none");
+    }
+  }
+}

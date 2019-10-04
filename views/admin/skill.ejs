@@ -1,0 +1,34 @@
+<section class="tab-pane" id="skills-tab" role="tabpanel">
+  <h5>Skills</h5>
+    <% skills.forEach((skill) => { %>
+        <div class="card card-body mb-3">
+          <form action="/skills/<%= skill.id %>?_method=PUT" method="post">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="form-group">
+              <label for="skillType">Type</label>
+              <input type="text" class="form-control" name="skillType" value="<%= skill.type %>">
+            </div>
+            <div class="form-group">
+              <label for="skillPogress">Pogress</label>
+              <input type="range" class="form-control skillPogress" name="skillPogress" value="<%= skill.progress %>">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a href="/skills/<%= skill.id %>?_method=DELETE" class="btn btn-primary">Delete</a> 
+          </form>
+        </div>
+    <% }) %> 
+      <div class="card card-body mb-3">
+        <form action="/skills" method="post">
+            <input type="hidden" name="_method" value="POST">
+            <div class="form-group">
+              <label for="skillType">Type</label>
+              <input type="text" class="form-control" name="skillType" value="" required>
+            </div>
+            <div class="form-group">
+              <label for="skillPogress">Pogress</label>
+              <input type="range" class="form-control skillPogress" name="skillPogress" value="" min="0" max="100">
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+</section>

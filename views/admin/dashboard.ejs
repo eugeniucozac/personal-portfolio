@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+<body>
+  <main class="admin">
+    <div class="container-fluid">
+      <section class="d-flex flex-column flex-md-row align-items-center my-3 user-bar">
+        <h6 class="my-0 mr-md-auto">Hello <span>Admin</span>!</h6>
+        <a class="" href="/admin/logout">Logout</a>
+      </section>
+      <div class="row">
+        <nav class="col-md-2 sidebar pr-0">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#header-tab" role="tab">header</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#about-tab" role="tab">about</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#logo-tab" role="tab">logo</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#experience-tab" role="tab">experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#skills-tab" role="tab">skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#projects-tab" role="tab">projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#design-tab" role="tab">design</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#contact-tab" role="tab">contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#subtitles-tab" role="tab">subtitles</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 tab-content">
+        <% include ./header %>
+        <% include ./about %>
+        <% include ./logoexperience %>
+        <% include ./experience %>
+        <% include ./skill %>
+        <% include ./project %>
+        <% include ./pastexperience %>
+        <% include ./contact %>
+        <% include ./subtitle %>
+        </main>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
