@@ -31,27 +31,27 @@ body{
     }
   }
   p{
-  	font-family: $gothamBook;
-  	font-size: .75rem;
-  	line-height: 1.5rem;
-  	color: $white;
+    font-family: $gothamBook;
+    font-size: .75rem;
+    line-height: 1.5rem;
+    color: $white;
   }
   h2{
-  	font-family: $gothamBold;
-  	color:$yellow;
-  	position: relative;
-  	margin-bottom: 1.5rem;
-  	&::after{
-  		content: "____";
-  		margin-bottom: .2rem;
-  		position: absolute;
-  		bottom: .2rem;
-  		font-size: .9rem;
-  	  margin-left: .8rem;
+    font-family: $gothamBold;
+    color:$yellow;
+    position: relative;
+    margin-bottom: 1.5rem;
+    &::after{
+      content: "____";
+      margin-bottom: .2rem;
+      position: absolute;
+      bottom: .2rem;
+      font-size: .9rem;
+      margin-left: .8rem;
       @include media-breakpoint-down(sm) {
         display: none;
       }
-  	}
+    }
   }
 }
 .alert-danger{

@@ -1,5 +1,4 @@
 header{
-  font-family: $gothamBook;
   background: $black;
   border-bottom-right-radius: 8rem;
   .card-img{
@@ -153,6 +152,7 @@ header{
     font-family: $gothamMedium;
   }
   &>div:first-of-type{
+    font-family: $gothamBook;
     margin-top: 2rem;
     @include media-breakpoint-down(sm) {
       margin-top: 0;

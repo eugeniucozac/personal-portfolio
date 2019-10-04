@@ -15,11 +15,8 @@ npm install
 ```
 
 * Also you must create a js file: passwords_local.js and put all your credentials there or to have a heroku account for Production.
-* MongoDB url and to PORT will be by default.
-* And you need to have a Cloudinary account for uploading images.
-
-
-End with an example of getting some data out of the system or using it for a little demo
+* MongoDB url and PORT will be by default.
+* You need to have a Cloudinary account for uploading images.
 
 ## Authors
 
